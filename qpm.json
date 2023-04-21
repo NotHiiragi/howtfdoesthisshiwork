@@ -1,0 +1,46 @@
+{
+	"sharedDir": "shared",
+	"dependenciesDir": "extern",
+	"workspace": {
+		"scripts": {
+			"build": ["powershell ./scripts/build.ps1"],
+			"copy": ["powershell ./scripts/copy.ps1"],
+			"qmod": ["powershell ./scripts/build.ps1", "powershell ./scripts/createqmod.ps1"],
+			"stack": ["powershell ./scripts/ndk-stack.ps1"],
+			"tomb": ["powershell ./scripts/pull-tombstone.ps1"],
+			"restart": ["powershell ./scripts/restart-game.ps1"],
+			"logcat": ["powershell ./scripts/start-logging.ps1"]
+		}
+	},
+	"info": {
+		"name": "Pink Cute",
+		"id": "pinkcute",
+		"version": "0.1.0",
+		"url": null,
+		"additionalData": {
+			"overrideSoName": "libpinkcute.so",
+			"cmake": true
+		}
+	},
+	"dependencies": [
+		{
+			"id": "beatsaber-hook",
+			"versionRange": "^3.8.0",
+			"additionalData": {
+				"extraFiles": [
+					"src/inline-hook"
+				]
+			}
+		},
+		{
+			"id": "modloader",
+			"versionRange": "=1.2.3",
+			"additionalData": {
+				
+			}
+		}
+	],
+	"additionalData": {
+		
+	}
+}
